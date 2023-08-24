@@ -19,7 +19,7 @@ resource sourceNetwork 'Microsoft.Network/virtualNetworks@2022-09-01' = {
 resource destinationNetwork 'Microsoft.Network/virtualNetworks@2022-09-01' = {
   name: destinationNetworkName
   location: destinationNetworkLocation // Location/region for the destination virtual network
-  location: destinationNetworkLocation // Location/region for the destination virtual network
+
   properties: {
     addressSpace: {
       addressPrefixes: ['10.1.0.0/16']
