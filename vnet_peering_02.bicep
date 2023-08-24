@@ -1,6 +1,8 @@
 param sourceNetworkName string // Parameter for the name of the source virtual network
 param destinationNetworkName string // Parameter for the name of the destination virtual network
 param resourceGroupName string // Parameter for the name of the resource group
+param sourceNetworkLocation string // Parameter for the location of the source virtual network
+param destinationNetworkLocation string // Parameter for the location of the destination virtual network
 
 // Define the source virtual network resource using the provided name
 resource sourceNetwork 'Microsoft.Network/virtualNetworks@2022-09-01' = {
@@ -16,6 +18,7 @@ resource sourceNetwork 'Microsoft.Network/virtualNetworks@2022-09-01' = {
 // Define the destination virtual network resource using the provided name
 resource destinationNetwork 'Microsoft.Network/virtualNetworks@2022-09-01' = {
   name: destinationNetworkName
+  location: destinationNetworkLocation // Location/region for the destination virtual network
   location: destinationNetworkLocation // Location/region for the destination virtual network
   properties: {
     addressSpace: {
